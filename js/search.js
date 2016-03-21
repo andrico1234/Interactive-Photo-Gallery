@@ -2,17 +2,19 @@
  * Created by Home on 20/03/2016.
  */
 
-$("#filter").keyup(function() {             // Keyboard event keyUp()
+$("#filter").keyup(function() {                  // Keyboard event keyUp()
 
-  var searchText = $(this).val();           // the contents of search bar = input
+  var searchText = $("#filter").val();           // the contents of search bar = input
 
-  for(var i = 1; i > 12; i += 1) {              // Check pictures titles for letter 'H'
-    if ($("img").has(searchText)) {         // If H is contained in the href
-      $(this).removeClass("hidden");        // Leave picture on page (remove-class())
-    } else {                                // If H isn't found
-      $(this).addClass("hidden");           // Hide the pictures (addClass())
+  $("img").each(function() {                     // Iterates through each image
+    var altValue = $(this).attr("alt");          // The alt of the image is stored in this variable
+    if(altValue.toUpperCase().indexOf(searchText.toUpperCase()) !== -1) {           // If the altValue doesn't contain searchText, -1 will return.
+      $(this).removeClass("hidden");             // Leave picture on page (remove-class())
+      } else {                                   // If H isn't found
+      $(this).addClass("hidden");                // Hide the pictures (addClass())
     }
-  }
+  });
 });
 
 
+// Fix the header to the top of the screen

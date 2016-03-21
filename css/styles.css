@@ -14,18 +14,18 @@
 }
 
 .photo-gallery {
-    max-width: 90%;
+    max-width: 75%;
     margin: auto;
 }
 
 .thumbnail {
-    display: inline-block;
-    float: left;
-    max-width: 33%;
+    display: block;
+    /*float: left;*/
+    max-width: 100%;
     padding-right: 20px;
     text-align: center;
     margin: auto;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 #filter {
@@ -39,10 +39,30 @@
 
 .hidden {
     opacity: 0.4;
+    transition: opacity .25s ease-in-out;
+
 }
 
 
 /* Media Queries */
+
+@media screen and (min-width: 480px) {
+
+    .photo-gallery {
+        max-width: 90%;
+        margin: auto;
+    }
+
+    .thumbnail {
+        display: inline-block;
+        float: left;
+        max-width: 33%;
+        padding-right: 20px;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+}
 
 @media screen and (min-width: 768px) {
 
