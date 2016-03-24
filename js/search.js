@@ -11,11 +11,7 @@ $("#filter").keyup(function() {                  // Keyboard event keyUp()
     if(altValue.toUpperCase().indexOf(searchText.toUpperCase()) !== -1) {           // If the altValue doesn't contain searchText, -1 will return.
       $(this).removeClass("hidden");             // Leave picture on page (remove-class())
       } else {                                   // If H isn't found
-      $(this).addClass("hidden");
-      $("a img:parent").addClass("hidden");           // Hide the pictures (addClass())
+      $(this).addClass("hidden");                // Hide the pictures (addClass())
     };
   });
 });
-
-
-// Fix the header to the top of the screen

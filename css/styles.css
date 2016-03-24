@@ -10,6 +10,7 @@
     text-align: center;
     padding: 25px;
     background: white;
+    opacity: 0.9;
     position: fixed;
     width: 100%;
     z-index: 1;
@@ -22,8 +23,8 @@
 }
 
 .thumbnail {
-    display: block;
-    max-width: 100%;
+    display: inline-block;
+    width: 100%;
     text-align: center;
     margin: auto;
     margin-bottom: 30px;
@@ -36,6 +37,11 @@
     border: solid 2px lightgray;
     width: 50%;
     padding: 10px;
+    opacity: 1;
+}
+
+input[type=text] {
+    font-size: 16px;
 }
 
 .hidden {
@@ -44,6 +50,60 @@
     pointer-events: none;
 }
 
+/* Overlay Styles */
+
+#overlay {
+    background: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: none;
+    text-align: center;
+}
+
+#overlayImage {
+    width: 90%;
+    border: solid 2px white;
+    margin-top: 20%;
+}
+
+#overlay p {
+    color: white;
+    margin: 20px 50px;
+}
+
+#leftArrow, #rightArrow, #cross {
+    position: fixed;
+    cursor: pointer;
+    z-index: 10;
+    display: none;
+}
+
+#cross {
+    margin-top: 21%;
+    right: 6%;
+    height: 25px;
+    background: rgba(0,0,0,0.1);
+}
+
+#leftArrow {
+    left: 5%;
+    height: 25px;
+    border: solid 2px white;
+    margin-top: 45%;
+    background: white;
+}
+
+#rightArrow {
+    right: 5%;
+    height: 25px;
+    border: solid 2px white;
+    margin-top: 45%;
+    background: white;
+}
 
 /* Media Queries */
 
@@ -71,7 +131,31 @@
     #filter {
         width: 300px;
     }
+
+    #overlayImage {
+        width: 70%;
+        margin-top: 15%;
+    }
+
+    #leftArrow {
+        height: 30px;
+        left: 15%;
+        margin-top: 33%;
+    }
+
+    #rightArrow {
+        height: 30px;
+        right: 15%;
+        margin-top: 33%;
+    }
+
+    #cross {
+        margin-top: 16%;
+        right: 16%;
+    }
 }
+
+
 
 @media screen and (min-width: 768px) {
 
@@ -99,6 +183,28 @@
     #filter {
         width: 440px;
         padding: 10px;
+    }
+
+    #overlayImage {
+        width: 50%;
+        margin-top: 8%;
+    }
+
+    #leftArrow {
+        margin-top: 22%;
+        left: 25%;
+        height: 40px;
+    }
+
+    #rightArrow {
+        right: 25%;
+        margin-top: 22%;
+        height: 40px;
+    }
+
+    #cross {
+        margin-top: 9%;
+        right: 26%;
     }
 
 }
