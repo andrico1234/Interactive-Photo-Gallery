@@ -28,6 +28,7 @@
     text-align: center;
     margin: auto;
     margin-bottom: 30px;
+    pointer-events: none;
 }
 
 #filter {
@@ -35,7 +36,7 @@
     margin: auto;
     border-radius: 5px;
     border: solid 2px lightgray;
-    width: 50%;
+    width: 80%;
     padding: 10px;
     opacity: 1;
 }
@@ -52,8 +53,8 @@ input[type=text] {
 
 /* Overlay Styles */
 
-#overlay {
-    background: rgba(0,0,0,0.7);
+#overlay, #overlayTwo {
+    background: rgba(0, 0, 0, 0.77);
     width: 100%;
     height: 100%;
     position: fixed;
@@ -66,43 +67,48 @@ input[type=text] {
 
 #overlayImage {
     width: 90%;
-    border: solid 2px white;
+    border: solid 4px white;
     margin-top: 20%;
 }
 
-#overlay p {
-    color: white;
-    margin: 20px 50px;
+#youtube_canvas {
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 20%;
+    left: 30%;
 }
 
-#leftArrow, #rightArrow, #cross {
+#overlay p {
+    color: lightgrey;
+    font-size: 14px;
+    margin: 20px;
+}
+
+#captionText {
+    display: inline-block;
+    text-align: center;
+    width: 80%;
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+}
+
+#leftArrow, #rightArrow {
     position: fixed;
     cursor: pointer;
     z-index: 10;
     display: none;
 }
 
-#cross {
-    margin-top: 21%;
-    right: 6%;
-    height: 25px;
-    background: rgba(0,0,0,0.1);
-}
-
 #leftArrow {
     left: 5%;
-    height: 25px;
-    border: solid 2px white;
     margin-top: 45%;
-    background: white;
 }
 
 #rightArrow {
     right: 5%;
-    height: 25px;
-    border: solid 2px white;
+    height: 50px;
     margin-top: 45%;
-    background: white;
 }
 
 /* Media Queries */
@@ -122,6 +128,9 @@ input[type=text] {
         margin: auto;
         margin-right: 5%;
         margin-bottom: 5%;
+        pointer-events: auto;
+        box-shadow: 0px 0px 5px #999;
+        border: solid 4px white;
     }
 
     a:nth-of-type(3n+3) > img {
@@ -133,26 +142,26 @@ input[type=text] {
     }
 
     #overlayImage {
-        width: 70%;
+        width: 80%;
         margin-top: 15%;
     }
 
+    #captionText {
+        width: 50%;
+    }
+
     #leftArrow {
-        height: 30px;
-        left: 15%;
-        margin-top: 33%;
+        height: 50px;
+        left: 2%;
+        margin-top: 35%;
     }
 
     #rightArrow {
-        height: 30px;
-        right: 15%;
-        margin-top: 33%;
+        height: 50px;
+        right: 2%;
+        margin-top: 35%;
     }
 
-    #cross {
-        margin-top: 16%;
-        right: 16%;
-    }
 }
 
 
@@ -186,25 +195,21 @@ input[type=text] {
     }
 
     #overlayImage {
-        width: 50%;
+        width: 70%;
+        max-width: 650px;
         margin-top: 8%;
     }
 
     #leftArrow {
-        margin-top: 22%;
-        left: 25%;
-        height: 40px;
+        margin-top: 25%;
+        left: 6%;
+        height: 70px;
     }
 
     #rightArrow {
-        right: 25%;
-        margin-top: 22%;
-        height: 40px;
-    }
-
-    #cross {
-        margin-top: 9%;
-        right: 26%;
+        right: 6%;
+        margin-top: 25%;
+        height: 70px;
     }
 
 }
